@@ -8,7 +8,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(myMap);
 
-var url = "https://data.sfgov.org/resource/cuks-n6tp.json?$limit=10000";
+var url = "national_gp_dict.json";
 
 d3.json(url).then(function(response) {
 
@@ -17,10 +17,10 @@ d3.json(url).then(function(response) {
   var heatArray = [];
 
   for (var i = 0; i < response.length; i++) {
-    var location = response[i].location;
+    var location = response[i].metadata;
 
     if (location) {
-      heatArray.push([location.coordinates[1], location.coordinates[0]]);
+      heatArray.push([location.lat, location.lon]);
     }
   }
 
