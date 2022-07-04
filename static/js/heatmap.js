@@ -15,15 +15,17 @@ d3.json(url).then(function(response) {
   console.log(response);
 
   var heatArray = [];
+  var nationalAsthmaData = response.metadata;
 
-  for (var i = 0; i < response.length; i++) {
-    var location = response[i].metadata;
+
+  for (var i = 0; i < nationalAsthmaData.length; i++) {
+    var location = nationalAsthmaData[i];
     console.log(location);
 
     if (location) {
-      for(var i=0;i<response[i].metadata.asthma_percentage; i++){
+      for(var i=0;i<nationalAsthmaData.asthma_percentage; i++){
         heatArray.push([location.lat, location.lon]);
-        console.log(response[i].metadata.asthma_percentage);
+        console.log(nationalAsthmaData.asthma_percentage);
       }
     }
   }
