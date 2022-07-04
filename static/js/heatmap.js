@@ -1,5 +1,5 @@
 var myMap = L.map("map", {
-  center: [54, -1],
+  center: [52.4862, -1.8904],
   zoom: 7
 });
 
@@ -27,7 +27,7 @@ d3.json(url).then(function(response) {
     console.log(location.lon);
 
     if (location) {
-      for(var j=0;j<location.asthma_percentage; j++){
+      for(var j=0;j<((location.asthma_percentage)*(location.asthma_percentage)); j++){
         heatArray.push([location.lat, location.lon]);
         console.log([location.lat, location.lon] + ", "+ location.asthma_percentage + " times") ;
       }
