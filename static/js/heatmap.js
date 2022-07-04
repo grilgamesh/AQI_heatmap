@@ -27,7 +27,7 @@ d3.json(url).then(function(response) {
     console.log(location.lon);
 
     if (location) {
-      for(var j=0;j<((location.asthma_percentage)*(location.asthma_percentage)); j++){
+      for(var j=0;j<((location.asthma_percentage)*(31)); j++){
         heatArray.push([location.lat, location.lon]);
         console.log([location.lat, location.lon] + ", "+ location.asthma_percentage + " times") ;
       }
@@ -35,7 +35,7 @@ d3.json(url).then(function(response) {
   }
 
   var heat = L.heatLayer(heatArray, {
-    radius: 50,
+    radius: 100,
     blur: 35
   }).addTo(myMap);
 
