@@ -8,7 +8,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(myMap);
 
-var url = "national_gp_dict.json";
+var url = "static/js/national_gp_dict.json";
 
 d3.json(url).then(function(response) {
 
