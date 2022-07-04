@@ -8,7 +8,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(myMap);
 
-var url = "static/js/national_gp_dict.json";
+var url = "national_gp_dict.json";
 
 d3.json(url).then(function(response) {
 
@@ -18,14 +18,17 @@ d3.json(url).then(function(response) {
 
   for (var i = 0; i < response.length; i++) {
     var location = response[i].metadata;
+    console.log(location)
 
     if (location) {
-      heatArray.push([location.lat, location.lon]);
+      for(var i=0;i<response[i].metadata.asthma_percentage){
+        heatArray.push([location.lat, location.lon]);
+      }
     }
   }
 
   var heat = L.heatLayer(heatArray, {
-    radius: 20,
+    radius: 500,
     blur: 35
   }).addTo(myMap);
 
