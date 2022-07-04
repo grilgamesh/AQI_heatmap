@@ -12,10 +12,10 @@ var url = "static/js/national_gp_dict.json";
 
 d3.json(url).then(function(response) {
 
-  console.log(response);
 
   var heatArray = [];
   var nationalAsthmaData = response.metadata;
+  console.log(nationalAsthmaData);
 
 
   for (var i = 0; i < nationalAsthmaData.length; i++) {
@@ -23,7 +23,7 @@ d3.json(url).then(function(response) {
     console.log(location);
 
     if (location) {
-      for(var i=0;i<nationalAsthmaData.asthma_percentage; i++){
+      for(var i=0;i<location.asthma_percentage; i++){
         heatArray.push([location.lat, location.lon]);
         console.log(nationalAsthmaData.asthma_percentage);
       }
