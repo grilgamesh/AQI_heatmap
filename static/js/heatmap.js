@@ -27,7 +27,7 @@ d3.json(url).then(function(response) {
     console.log(location.lon);
 
     if (location) {
-      for(var j=0;j<((location.asthma_percentage)*(15)); j++){
+      for(var j=0;j<((location.asthma_percentage)*(25)); j++){
         heatArray.push([location.lat, location.lon]);
         console.log([location.lat, location.lon] + ", "+ location.asthma_percentage + " times") ;
       }
