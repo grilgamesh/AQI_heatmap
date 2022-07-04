@@ -18,11 +18,12 @@ d3.json(url).then(function(response) {
 
   for (var i = 0; i < response.length; i++) {
     var location = response[i].metadata;
-    console.log(location)
+    console.log(location);
 
     if (location) {
-      for(var i=0;i<response[i].metadata.asthma_percentage){
+      for(var i=0;i<response[i].metadata.asthma_percentage; i++){
         heatArray.push([location.lat, location.lon]);
+        console.log(response[i].metadata.asthma_percentage);
       }
     }
   }
