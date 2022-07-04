@@ -18,7 +18,7 @@ d3.json(url).then(function(response) {
   console.log(nationalAsthmaData);
 
 
-  for (var i = 0; i < nationalAsthmaData.length; i++) {
+  for (var i = 0; i < 5; i++) {
     var location = nationalAsthmaData[i];
     console.log(location.asthma_percentage);
     console.log(location.lat);
