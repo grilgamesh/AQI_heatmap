@@ -20,7 +20,7 @@ d3.json(url).then(function(response) {
 
 
 
-  for (var i = 0; i < 5; i++) {
+  for (var i = 0; i < nationalAsthmaData.length; i++) {
     var location = nationalAsthmaData[i];
     console.log(location.asthma_percentage);
     console.log(location.lat);
@@ -29,6 +29,7 @@ d3.json(url).then(function(response) {
     if (location) {
       for(var j=0;j<location.asthma_percentage; j++){
         heatArray.push([location.lat, location.lon]);
+        console.log([location.lat, location.lon] + ", "+ location.asthma_percentage + " times") ;
       }
     }
   }
