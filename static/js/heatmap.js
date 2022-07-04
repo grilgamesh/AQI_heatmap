@@ -16,6 +16,8 @@ d3.json(url).then(function(response) {
   var heatArray = [];
   var nationalAsthmaData = response.metadata;
   console.log(nationalAsthmaData);
+  console.log(nationalAsthmaData.length);
+
 
 
   for (var i = 0; i < 5; i++) {
@@ -25,7 +27,7 @@ d3.json(url).then(function(response) {
     console.log(location.lon);
 
     if (location) {
-      for(var i=0;i<location.asthma_percentage; i++){
+      for(var j=0;j<location.asthma_percentage; j++){
         heatArray.push([location.lat, location.lon]);
       }
     }
