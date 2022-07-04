@@ -27,13 +27,12 @@ d3.json(url).then(function(response) {
     if (location) {
       for(var i=0;i<location.asthma_percentage; i++){
         heatArray.push([location.lat, location.lon]);
-        console.log(nationalAsthmaData.asthma_percentage);
       }
     }
   }
 
   var heat = L.heatLayer(heatArray, {
-    radius: 500,
+    radius: 50,
     blur: 35
   }).addTo(myMap);
 
