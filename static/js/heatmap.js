@@ -20,14 +20,16 @@ d3.json(url).then(function(response) {
 
   for (var i = 0; i < nationalAsthmaData.length; i++) {
     var location = nationalAsthmaData[i];
-    console.log(location);
+    console.log(location.asthma_percentage);
+    console.log(location.lat);
+    console.log(location.lon);
 
-    if (location) {
-      for(var i=0;i<location.asthma_percentage; i++){
-        heatArray.push([location.lat, location.lon]);
-        console.log(nationalAsthmaData.asthma_percentage);
-      }
-    }
+    // if (location) {
+    //   for(var i=0;i<location.asthma_percentage; i++){
+    //     heatArray.push([location.lat, location.lon]);
+    //     console.log(nationalAsthmaData.asthma_percentage);
+    //   }
+    // }
   }
 
   var heat = L.heatLayer(heatArray, {
