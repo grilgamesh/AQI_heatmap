@@ -36,7 +36,7 @@ d3.json(url).then(function(response) {
 
   var heat = L.heatLayer(heatArray, {
     radius: 50,
-    blur: 35
+    blur: 70
   }).addTo(myMap);
 
 });
